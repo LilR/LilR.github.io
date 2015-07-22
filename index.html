@@ -2,22 +2,39 @@
 layout: default
 ---
 
-<div class="home">
+<div class="row">
+        <div class="large-9 columns" role="content">
+        {% for post in site.posts %}
+          <article>
 
-  <h1 class="page-heading">Posts</h1>
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            <h6>{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</h6>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </article>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+          <hr/>
+          {% endfor %}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+          <p>Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-</div>
+        </div>
+
+        <aside class="large-3 columns">
+
+          <h5>Categories</h5>
+          <ul class="side-nav">
+              {% for category in site.categories %}
+            <li><a name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
+            {% endfor %}
+          </ul>
+
+          <div class="panel">
+            <h5>Featured</h5>
+            <p>Some featured text?</p>
+            <a href="#">Read More →</a>
+          </div>
+
+        </aside>
+
+
+      </div>
