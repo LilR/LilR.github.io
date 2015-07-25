@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Minititan!"
+date:   2015-07-25
+categories: lisaac
+---
+The first real post! Here's an awesome Lisaac comic:
+
+<img src="https://placehold.it/350x600" />
