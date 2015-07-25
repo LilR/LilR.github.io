@@ -1,15 +1,6 @@
 <header>
     <div class="row">
         <div class="large-12 columns">
-          <div class="nav-bar right">
-           <ul class="button-group">
-             {% for page in site.pages %}
-               {% if page.title %}
-               <li><a href="{{ page.url | prepend: site.baseurl }}" class="button">{{ page.title }}</a></li>
-               {% endif %}
-             {% endfor %}
-            </ul>
-          </div>
           <a href="{{ site.baseurl }}/"><h1>{{ site.title }} <small>by Lily R</small></h1></a>
           <hr/>
         </div>
